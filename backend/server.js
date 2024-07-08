@@ -32,12 +32,12 @@ const rooms = {};
 
 io.on('connection', (socket) => {
   console.log('New client connected'); // Log to verify connection
-  socket.on('create_room', () => {
+  socket.on('create_room', (name) => {
     const roomCode = generateUniqueCode();
-    rooms[roomCode] = { players: [socket.id], gameState: {} };
+    rooms[roomCode] = { players: [name], gameState: {} };
     socket.join(roomCode);
     socket.emit('room_created', roomCode);
-    socket.emit('deez_nuts');
+    socket.emit('deez_nuts', rooms[roomCode].players);
   });
 
   socket.on('join_room', (roomCode) => {
