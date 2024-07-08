@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'https://spy-app-997b6.web.app', 
+    origin: 'http://spy-app-997b6.web.app', 
     methods: ['GET', 'POST']
   }
 });
