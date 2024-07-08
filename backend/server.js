@@ -7,7 +7,7 @@ const app = express();
 
 // Use CORS middleware
 app.use(cors({
-  origin: 'https://spy-app-997b6.web.app/', // Replace with your frontend URL
+  origin: 'https://spy-app-997b6.web.app', 
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'https://spy-app-997b6.web.app/', // Replace with your frontend URL
+    origin: 'https://spy-app-997b6.web.app', 
     methods: ['GET', 'POST']
   }
 });
