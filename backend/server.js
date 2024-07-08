@@ -40,9 +40,9 @@ io.on('connection', (socket) => {
     socket.emit('deez_nuts', rooms[roomCode].players);
   });
 
-  socket.on('join_room', (roomCode) => {
+  socket.on('join_room', (roomCode, name) => {
     if (rooms[roomCode]) {
-      rooms[roomCode].players.push(socket.id);
+      rooms[roomCode].players.push(name);
       socket.join(roomCode);
       socket.emit('joined_room', roomCode);
       io.to(roomCode).emit('update_state', rooms[roomCode].gameState);

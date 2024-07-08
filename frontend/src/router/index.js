@@ -14,7 +14,8 @@ const routes = [
   {
     path: '/lobby/:id',
     name: 'Lobby',
-    component: Lobby
+    component: Lobby,
+    props: (route) => ({roomCode: String(route.params.id)})
   },
   {
     path: '/game',
