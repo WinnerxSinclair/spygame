@@ -1,11 +1,24 @@
-// server.js
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
+const cors = require('cors');
 
 const app = express();
+
+// Use CORS middleware
+app.use(cors({
+  origin: 'https://spy-app-997b6.web.app/', // Replace with your frontend URL
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
+
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: 'https://spy-app-997b6.web.app/', // Replace with your frontend URL
+    methods: ['GET', 'POST']
+  }
+});
 
 const rooms = {};
 
@@ -30,14 +43,12 @@ io.on('connection', (socket) => {
 
   socket.on('game_action', (roomCode, action) => {
     if (rooms[roomCode]) {
-      // Update game state based on action
       rooms[roomCode].gameState = performAction(rooms[roomCode].gameState, action);
       io.to(roomCode).emit('update_state', rooms[roomCode].gameState);
     }
   });
 
   socket.on('disconnect', () => {
-    // Handle player disconnect
     for (const [roomCode, room] of Object.entries(rooms)) {
       room.players = room.players.filter(id => id !== socket.id);
       if (room.players.length === 0) {
