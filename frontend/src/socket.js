@@ -1,7 +1,9 @@
 import { io } from 'socket.io-client';
 
 // Replace with your Render backend URL
-const socket = io('https://spygame-mzqu.onrender.com');
+const socket = io('https://spygame-mzqu.onrender.com', {
+  transports: ['websocket']
+});
 
 // Verify connection
 socket.on('connect', () => {
@@ -13,3 +15,4 @@ socket.on('disconnect', () => {
 });
 
 export default socket;
+

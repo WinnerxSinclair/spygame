@@ -37,6 +37,7 @@ io.on('connection', (socket) => {
     rooms[roomCode] = { players: [socket.id], gameState: {} };
     socket.join(roomCode);
     socket.emit('room_created', roomCode);
+    socket.emit('deez_nuts');
   });
 
   socket.on('join_room', (roomCode) => {

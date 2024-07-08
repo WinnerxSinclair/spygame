@@ -1,11 +1,15 @@
 <script setup>
-import { ref } from 'vue'
-
+import { ref, getCurrentInstance } from 'vue'
+const socket = getCurrentInstance().appContext.config.globalProperties.$socket;
 const data = ref([
     'xd',
     'xdd',
     'xddd'
 ])
+
+socket.on('deez_nuts', () => {
+  console.log('xd')
+})
 </script>
 
 <template>
