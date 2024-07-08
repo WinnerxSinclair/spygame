@@ -7,25 +7,31 @@ const app = express();
 
 // Use CORS middleware
 app.use(cors({
-  origin: 'https://spy-app-997b6.web.app', 
+  origin: 'https://spy-app-997b6.web.app',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
+
+// Add a basic route to verify server is running
 app.get('/', (req, res) => {
   res.send('Backend is running');
 });
 
 const server = http.createServer(app);
+
+// Set up Socket.io with CORS
 const io = new Server(server, {
   cors: {
-    origin: 'http://spy-app-997b6.web.app', 
-    methods: ['GET', 'POST']
+    origin: 'https://spy-app-997b6.web.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
   }
 });
 
 const rooms = {};
 
 io.on('connection', (socket) => {
+  console.log('New client connected'); // Log to verify connection
   socket.on('create_room', () => {
     const roomCode = generateUniqueCode();
     rooms[roomCode] = { players: [socket.id], gameState: {} };
@@ -52,6 +58,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
+    console.log('Client disconnected'); // Log to verify disconnection
     for (const [roomCode, room] of Object.entries(rooms)) {
       room.players = room.players.filter(id => id !== socket.id);
       if (room.players.length === 0) {
