@@ -11,6 +11,9 @@ app.use(cors({
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
 
 const server = http.createServer(app);
 const io = new Server(server, {
