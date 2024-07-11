@@ -1,7 +1,8 @@
 import { io } from 'socket.io-client';
 
-// Replace with your Render backend URL
-const socket = io('https://spygame-mzqu.onrender.com', {
+const serverUrl = import.meta.env.VITE_SOCKET_URL || 'https://spygame-mzqu.onrender.com';
+console.log('Connecting to server at:', serverUrl);
+const socket = io(serverUrl, {
   transports: ['websocket']
 });
 

@@ -15,12 +15,13 @@ const routes = [
     path: '/lobby/:id',
     name: 'Lobby',
     component: Lobby,
-    props: (route) => ({roomCode: String(route.params.id)})
+    props: (route) => ({roomCode: String(route.params.id), userName: route.query.name})
   },
   {
-    path: '/game',
+    path: '/game/:id',
     name: 'Game',
-    component: Game
+    component: Game,
+    props: (route) => ({roomCode: String(route.params.id), userName: route.query.name})
   }
  
 ]

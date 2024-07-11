@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <RouterView />
+  <div class="flex-c-c column gap">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>

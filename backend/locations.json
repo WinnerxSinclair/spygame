@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Hospital",
+    "roles": ["Nurse", "Doctor", "Patient"]
+  },
+  {
+    "name": "Gas Station",
+    "roles": ["Cashier", "Customer", "Shirtless Guy", "Raccoon"]
+  },
+  {
+    "name": "Castle",
+    "roles": ["Knight", "Princess", "King", "Servant", "Jester"]
+  },
+  {
+    "name": "Maid Cafe",
+    "roles": ["Maid", "Manager", "Customer"]
+  },
+  {
+    "name": "Meth Lab",
+    "roles": ["Cook", "Guard", "Rat", "Walter White"]
+  },
+  {
+    "name": "Hogwarts",
+    "roles": ["Ron Weasely", "Snape", "Dumbledore", "Dementor", "Lord Voldemort", "Harry Pottah"]
+  },
+  {
+    "name": "Pirate Ship",
+    "roles": ["Crew m8", "Captain", "Parrot", "Prisoner", "Cannoneer"]
+  },
+  {
+    "name": "Casino",
+    "roles": ["Gambler", "Waitress", "Dealer", "Banker", "Pit Boss"]
+  },
+  {
+    "name": "Submarine",
+    "roles": ["Captain", "Sailor","Ballistic Missile"]
+  },
+  {
+    "name": "Mars",
+    "roles": ["Alien", "Astronaut"]
+  },
+  {
+    "name": "Cruise Ship",
+    "roles": ["Captain", "Old Person","Housekeeping", "Performer", "Lifeguard"]
+  },
+  {
+    "name": "Beach",
+    "roles": ["Lifeguard", "Fat Shirtless Guy","Crab", "Lethal Jellyfish", "Surfer Dude"]
+  },
+  {
+    "name": "Ohio",
+    "roles": ["Alien", "Lebron James"]
+  },
+  {
+    "name": "Anime Expo",
+    "roles": ["Weeb", "Ultra Weeb","Cosplayer", "Merchant", "Voice Actress"]
+  },
+  {
+    "name": "Mount Doom",
+    "roles": ["Frodo Baggins", "Smeagle","Lord Sauron", "Samwise Something"]
+  },
+  {
+    "name": "Frat House",
+    "roles": ["Frat Dude", "Cheap Beer","Ungodly Scent", "Dirty Undies"]
+  },
+  {
+    "name": "Underworld",
+    "roles": ["Hades", "Cerberus","Lost Soul", "Hermes"]
+  }
+]
