@@ -1,6 +1,9 @@
 import { io } from 'socket.io-client';
 
-const serverUrl = import.meta.env.VITE_SOCKET_URL || 'https://spygame-mzqu.onrender.com';
+const serverUrl = 'https://spygame-mzqu.onrender.com';
+// import.meta.env.VITE_SOCKET_URL ||
+console.log('Environment variable VITE_SOCKET_URL:', import.meta.env.VITE_SOCKET_URL);
+
 console.log('Connecting to server at:', serverUrl);
 const socket = io(serverUrl, {
   transports: ['websocket']
