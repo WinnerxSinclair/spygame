@@ -44,7 +44,12 @@ io.on('connection', (socket) => {
 
   socket.on('join_room', (roomCode, name) => {
     if (rooms[roomCode]) {
-      rooms[roomCode].players.push(name);
+      if(rooms[roomCode].players.length>=8){
+        socket.emit('error', 'too many players');
+        return;
+      }else{
+        rooms[roomCode].players.push(name);
+      }
       socket.join(roomCode);
       socket.emit('joined_room', roomCode);
       console.log('here')

@@ -45,6 +45,9 @@ onUnmounted(()=> clearInterval(intId));
 function applyLS(){
 
 }
+
+const roleClass = computed(() => role.value == 'spy' ? '' : 'alt-col');
+const roleClass2 = computed(() => role.value == 'spy' ? 'fs-600' : 'fs-200')
 </script>
 <template>
   <div class="flex gap">
@@ -52,16 +55,22 @@ function applyLS(){
     <button class="main-btn-full" @click="restartGame">Restart Game</button>
   </div>
   <div class="margin-top fs-600">{{ timesUp ? 'Times Up!' : timer }}</div>
-  <div class="flex gap player-wrap wrap">
-    <div class="fs-400 ff-1" v-for="playerr in players" 
+  <div class="flex-c gap player-wrap wrap">
+    <div class="fs-300 ff-1" v-for="playerr in players" 
     :key="playerr" @click="applyLS">{{ playerr.player }}</div>
   </div>
-  <div class="fs-600"><span class="fs-100 bold">Location:</span> {{ role=='spy' ? '???' : location }}</div>
-  <div class="fs-600"><span class="fs-100 bold">Role:</span> {{ role }}</div>
+  <div class="fs-600" :class="roleClass"><span class="fs-100 bold lol">Location:</span> {{ role=='spy' ? '???' : location }}</div>
+  <div :class="roleClass2"><span class="fs-100 bold">Role:</span> {{ role }}</div>
 </template>
 
 <style scoped>
 .player-wrap{
   max-width: 400px;
+}
+.alt-col{
+  color: rgb(19, 190, 19);
+}
+.lol{
+  color:white;
 }
 </style>

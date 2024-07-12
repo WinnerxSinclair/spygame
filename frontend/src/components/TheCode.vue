@@ -18,7 +18,7 @@ function closeThis(){
   emit('close');
 }
 function validateInput(){
-  if(code.value==null || code.value=='' || code.value==undefined) return false;
+  if(code.value==null || code.value.trim()=='' || code.value==undefined) return false;
   if(code.value.length!==5)return false;
   return true;
 }

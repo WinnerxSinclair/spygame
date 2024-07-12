@@ -61,10 +61,50 @@
   },
   {
     "name": "Frat House",
-    "roles": ["Frat Dude", "Cheap Beer","Ungodly Scent", "Dirty Undies"]
+    "roles": ["Frat Dude #1", "Frat Dude #2","Frat Dude #3", "Frat Dude #4"]
   },
   {
     "name": "Underworld",
     "roles": ["Hades", "Cerberus","Lost Soul", "Hermes"]
+  },
+  {
+    "name": "Space Station",
+    "roles": ["Astronaut", "Mission Control", "Alien Stowaway", "Engineer"]
+  },
+  {
+    "name": "Haunted House",
+    "roles": ["Ghost", "Paranormal Investigator", "Zombie", "Clown"]
+  },
+  {
+    "name": "Jungle",
+    "roles": ["Explorer", "Tarzan", "Tribal Chief", "Wild Animal"]
+  },
+  {
+    "name": "EDM Concert",
+    "roles": ["DJ", "Raver", "Hippie Girl", "Drug Dealer"]
+  },
+  {
+    "name": "Bank Heist",
+    "roles": ["Robber", "Hostage", "Getaway Driver", "Police Officer"]
+  },
+  {
+    "name": "College",
+    "roles": ["Student", "Professor", "Dean", "Janitor"]
+  },
+  {
+    "name": "Theme Park",
+    "roles": ["Visitor", "Mascot", "Ride Operator", "Cotton Candy Vendor"]
+  },
+  {
+    "name": "Police Station",
+    "roles": ["Officer", "Detective", "Suspect", "Donut Box #99999"]
+  },
+  {
+    "name": "Airport",
+    "roles": ["Pilot", "Passenger", "Security", "Flight Attendant"]
+  },
+  {
+    "name": "Chinatown",
+    "roles": ["Restaurant Owner", "Tourist", "Produce Vendor", "Clothes Vendor"]
   }
 ]
